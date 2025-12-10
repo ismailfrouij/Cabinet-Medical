@@ -23,20 +23,23 @@ public class MainFrame extends JFrame {
 
         JTabbedPane tabbedPane = new JTabbedPane();
 
+        // Onglets pour tout le monde
         tabbedPane.addTab("Planning RDV", new PanneauRendezVous());
         tabbedPane.addTab("Bilan mensuel", new PanneauBilanMensuel());
 
+        // Onglets uniquement pour l'Assistant
         if (u instanceof Assistant) {
-            tabbedPane.addTab("Consultations", new PanneauConsultation());
-            tabbedPane.addTab("Gestion Médecins", new PanneauMedecin());
-            tabbedPane.addTab("Gestion Categorie", new PanneauCategorie());
-            tabbedPane.addTab("Gestion Assistant", new PanneauAssistant());
-
+            tabbedPane.addTab("Consultations", new PanneauConsultation()); // <--- ICI
+            tabbedPane.addTab("Gestion Médecins", new PanneauMedecin());   // <--- ET ICI
+            
             tabbedPane.insertTab("Gestion Patients", null, new PanneauPatient(), null, 0);
             tabbedPane.insertTab("Gestion RDV", null, new PanneauRendezVous(), null, 1);
             tabbedPane.insertTab("Paiement/caisse", null, new PanneauPaiement(), null, 2);
+            tabbedPane.addTab("Gestion Categorie", new PanneauCategorie());
+            tabbedPane.addTab("Gestion Assistant", new PanneauAssistant());
         }
 
+        // Onglet pour le Médecin
         if (u instanceof Medecin) {
             tabbedPane.insertTab("Gestion Patients", null, new PanneauPatient(), null, 0);
         }
