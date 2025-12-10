@@ -68,7 +68,9 @@ String password = "";
 Depuis NetBeans :
 
 1.Ouvrir le projet
+
 2.Vérifier DBConnection.java
+
 3.Cliquer sur Run Project
 
 
