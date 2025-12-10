@@ -67,11 +67,11 @@ String password = "";
 ▶️ Exécution
 Depuis NetBeans :
 
-1.Ouvrir le projet
+1. Ouvrir le projet
 
-2.Vérifier DBConnection.java
+2. Vérifier DBConnection.java
 
-3.Cliquer sur Run Project
+3. Cliquer sur Run Project
 
 
 
