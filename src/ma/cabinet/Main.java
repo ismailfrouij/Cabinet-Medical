@@ -1,10 +1,9 @@
- 
 package ma.cabinet;
 
-import ma.cabinet.ui.RendezVousFrame;
+import ma.cabinet.ui.LoginFrame;
 
 public class Main {
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(() -> new RendezVousFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new LoginFrame().setVisible(true));
     }
 }

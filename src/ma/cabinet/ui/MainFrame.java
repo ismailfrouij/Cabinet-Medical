@@ -1,4 +1,3 @@
- 
 package ma.cabinet.ui;
 
 import javax.swing.*;
@@ -24,25 +23,22 @@ public class MainFrame extends JFrame {
 
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        
         tabbedPane.addTab("Planning RDV", new PanneauRendezVous());
-        tabbedPane.addTab("Consultations", new PanneauConsultation());
         tabbedPane.addTab("Bilan mensuel", new PanneauBilanMensuel());
 
-        
         if (u instanceof Assistant) {
+            tabbedPane.addTab("Consultations", new PanneauConsultation());
+            tabbedPane.addTab("Gestion Médecins", new PanneauMedecin());
+            tabbedPane.addTab("Gestion Categorie", new PanneauCategorie());
+            tabbedPane.addTab("Gestion Assistant", new PanneauAssistant());
+
             tabbedPane.insertTab("Gestion Patients", null, new PanneauPatient(), null, 0);
             tabbedPane.insertTab("Gestion RDV", null, new PanneauRendezVous(), null, 1);
             tabbedPane.insertTab("Paiement/caisse", null, new PanneauPaiement(), null, 2);
-            tabbedPane.addTab("Gestion Categorie", new PanneauCategorie());
-            tabbedPane.addTab("Gestion Assistant", new PanneauAssistant());
         }
 
-        
         if (u instanceof Medecin) {
-            
             tabbedPane.insertTab("Gestion Patients", null, new PanneauPatient(), null, 0);
-            
         }
 
         this.add(tabbedPane);
