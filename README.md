@@ -1,56 +1,85 @@
-Cabinet Médical – Application Java
+# 🏥 Cabinet Médical — Application Java
 
-Ce projet est une application Desktop réalisée en Java Swing avec une base de données MySQL.
-Elle permet de gérer les principales opérations d’un cabinet médical : patients, médecins, consultations, paiements et rendez-vous.
+Application Desktop développée en **Java Swing** avec une base de données **MySQL**.  
+Elle permet de gérer les opérations essentielles d’un cabinet médical : **patients, médecins, consultations, paiements et rendez-vous**.
 
-I.Fonctionnalités :
+---
 
--Gestion des patients
+## 📌 Fonctionnalités
 
--Gestion des médecins
+### 👨‍⚕️ Gestion du personnel et des patients
+- Ajout / modification / suppression des **patients**
+- Ajout / modification / suppression des **médecins**
 
--Gestion des consultations
+### 📋 Gestion médicale
+- Enregistrement des **consultations**
+- Planification des **rendez-vous**
 
--Gestion des rendez-vous
+### 💰 Gestion financière
+- Saisie et enregistrement des **paiements**
+- Génération des **bilans journaliers**
+- Génération des **bilans mensuels**
 
--Gestion des paiements
+### 🔐 Authentification
+- Écran de connexion  
+- Sessions utilisateur (médecin / assistant)
 
--Bilans journaliers et mensuels
+---
 
--Authentification (écran de connexion)
+## 🗂️ Structure du projet
+```
+CabinetMedical/
+├── src/ma/cabinet/
+│ ├── dao/ → Accès BD (DAO : PatientDAO, MedecinDAO, ConsultationDAO…)
+│ ├── model/ → Classes métiers (Patient, Medecin, Consultation…)
+│ ├── ui/ → Interfaces graphiques (Swing)
+│ └── util/ → DBConnection, Session
+│
+├── build/ → Fichiers compilés (générés automatiquement)
+├── nbproject/ → Config NetBeans
+├── build.xml → Build script
+├── manifest.mf → Manifest du projet
+└── README.md
+```
 
-II.Structure du projet
+---
 
-model : classes représentant les entités (Patient, Medecin, Consultation…)
+## 🛠️ Technologies utilisées
 
-dao : accès à la base de données (CRUD via JDBC)
+- **Java (Swing)**
+- **MySQL**
+- **JDBC**
+- **NetBeans**
 
-ui : interfaces graphiques (Java Swing)
+---
 
-util : connexion à la base (DBConnection) et gestion de session
+## 🔧 Configuration requise
 
-III.Technologies utilisées :
-
--Java (Swing)
-
--MySQL
-
--JDBC
-
--NetBeans
-
-IV.Configuration 
-
-Modifier les identifiants de connexion dans :
-
+Modifier les identifiants MySQL dans :
 src/ma/cabinet/util/DBConnection.java
-
 Exemple :
-
+```java
 String url = "jdbc:mysql://localhost:3306/cabinet_medical";
 String user = "root";
 String password = "";
+```
 
-Exécution
+▶️ Exécution
+Depuis NetBeans :
 
-Ouvrir le projet dans NetBeans et cliquer sur Run Project.
+1. Ouvrir le projet
+
+2. Vérifier DBConnection.java
+
+3. Cliquer sur Run Project
+
+
+
+👤 Auteur
+
+Projet réalisé par Ismail Frouij
+Université Internationale de Rabat — Cycle Ingénieur Informatique
+
+
+
+

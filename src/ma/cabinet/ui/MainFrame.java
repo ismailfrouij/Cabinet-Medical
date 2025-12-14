@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ma.cabinet.ui;
 
 import javax.swing.*;
@@ -63,6 +59,10 @@ public class MainFrame extends JFrame {
         if (u instanceof Assistant) {
             tabbedPane.addTab("Consultations", new PanneauConsultation());
             tabbedPane.addTab("Gestion Médecins", new PanneauMedecin());
+
+            tabbedPane.addTab("Consultations", new PanneauConsultation()); // <--- ICI
+            tabbedPane.addTab("Gestion Médecins", new PanneauMedecin());   // <--- ET ICI
+
             
             tabbedPane.insertTab("Gestion Patients", null, new PanneauPatient(), null, 0);
             tabbedPane.insertTab("Paiement/caisse", null, new PanneauPaiement(), null, 2);
@@ -72,7 +72,7 @@ public class MainFrame extends JFrame {
 
         // Onglet pour le Médecin
         if (u instanceof Medecin) {
-            tabbedPane.insertTab("Gestion Patients", null, new PanneauPatient(), null, 0);
+            tabbedPane.addTab("Consultations", new PanneauConsultation());
         }
 
         // Ajout des onglets au centre de la fenêtre
